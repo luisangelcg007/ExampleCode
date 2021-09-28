@@ -1,21 +1,15 @@
 /***********************************************************************/
 /*                                                                     */
-/*  FILE       :AlarmWithCounterBreathPeriod.cpp                       */
-/*  DATE       :July 6, 2020                                           */
-/*  DESCRIPTION:After specific breath period number an alarm is set.   */
+/*  FILE       :ButtonProcess.cpp                                      */
+/*  DATE       :Sep 27th, 2021                                         */
+/*  DESCRIPTION:Button Process                                         */
 /*                                                                     */
-/*  CPU TYPE   :Arduino Due AT91SAM3X8E 512K Flash 96K RAM @ 84 MHz    */
-/*  AUTHOR     :Hasan Torres                                           */
-/*             :Luis Daniel Estrada                                    */
-/*             :Luis Fernando Lopez                                    */
-/*             :Luis Angel Cabral                                      */
+/*  CPU TYPE   :Arduino Due ATmega328P                                 */
+/*  AUTHOR     :Luis Angel Cabral                                      */
 /*                                                                     */
-/*  PROJECT    :VENTILATOR for COVID-19 Emergency                      */
-/*  IDE        :Arduino IDE 1.8.12                                     */
-/*  Compiler   :GCC Ver. 4.8.3-2014q1                                  */
+/*  PROJECT    :Code Example                                           */
+/*  IDE        :Arduino IDE 1.8.16                                     */
 /*                                                                     */
-/*  Copyright 2020-2021 Mabe TyP                                       */
-/*  All rights reserved                                                */
 /*                                                                     */
 /***********************************************************************/
 

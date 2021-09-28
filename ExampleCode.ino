@@ -1,6 +1,6 @@
 /***********************************************************************/
 /*                                                                     */
-/*  FILE       :ExampleCode.ino                                 */
+/*  FILE       :ExampleCode.ino                                        */
 /*  DATE       :Sep 27th, 2021                                         */
 /*  DESCRIPTION:Main Arduino routines                                  */
 /*                                                                     */
