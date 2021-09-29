@@ -38,7 +38,8 @@ U8 blueLEDdigitalPinNumber = 3;
 LED_t greenLED;
 U8 greenLEDdigitalPinNumber = 2;
 
-void setup() {
+void setup() 
+{
   SR_Button_Init(
     &blueButton,
     blueDigitalPinNumber,
@@ -58,7 +59,8 @@ void setup() {
     greenLEDdigitalPinNumber);
 }
 
-void loop() {
+void loop() 
+{
   unsigned long currentMillis = millis();
 
   if (currentMillis - previousMillis >= maintTickMs) 
@@ -73,13 +75,15 @@ void loop() {
     buttonStateGreen = SR_GetButtonState( &greenButton );
     buttonStateBlue = SR_GetButtonState( &blueButton );
 
-    if ( buttonStateGreen == unpressedButton) {
+    if ( buttonStateGreen == unpressedButton) 
+    {
       greenLED.interface.api->SetState(&greenLED.interface, off);
     } else {
       greenLED.interface.api->SetState(&greenLED.interface, on);
     }
 
-    if (buttonStateBlue == unpressedButton) {
+    if (buttonStateBlue == unpressedButton) 
+    {
       blueLED.interface.api->SetState(&blueLED.interface, off);
     } else {
       blueLED.interface.api->SetState(&blueLED.interface, on);

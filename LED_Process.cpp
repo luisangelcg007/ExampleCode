@@ -1,8 +1,8 @@
 /***********************************************************************/
 /*                                                                     */
-/*  FILE       :LED_Process.cpp                                      */
+/*  FILE       :LED_Process.cpp                                        */
 /*  DATE       :Sep 28th, 2021                                         */
-/*  DESCRIPTION:LED Process                                         */
+/*  DESCRIPTION:LED Process                                            */
 /*                                                                     */
 /*  CPU TYPE   :Arduino Due ATmega328P                                 */
 /*  AUTHOR     :Luis Angel Cabral                                      */

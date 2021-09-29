@@ -18,9 +18,6 @@
 /************************************************************************
  Name:          void SR_GetButtonState  
  Parameters:    Button_t* button: Button instance.
- Returns:       None
- Called by:     None
- Calls:         None
  Description:   Return the button state.
 ************************************************************************/
 buttonStateEnumeration SR_GetButtonState( Button_t* button )
@@ -31,9 +28,6 @@ buttonStateEnumeration SR_GetButtonState( Button_t* button )
 /************************************************************************
  Name:          SR_ButtonProcces
  Parameters:    Button_t* button: Button instance.
- Returns:       None
- Called by:     None
- Calls:         digitalRead()
  Description:   Monitor the button digital pin to deternmine the button state.
 ************************************************************************/
 void SR_ButtonProcces( Button_t* button )
@@ -89,9 +83,6 @@ void SR_ButtonProcces( Button_t* button )
  Parameters:    Button_t* button: Button instance.
                 U8 digitalPinNumber: digital pin number on arduino board.
                 U8 delayMs: time delay to determine the buton state.
- Returns:       None
- Called by:     None
- Calls:         None
  Description:   Initialices a Button.
 ************************************************************************/
 void SR_Button_Init(
