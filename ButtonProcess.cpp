@@ -47,39 +47,39 @@ void SR_ButtonProcces( Button_t* button )
         case unpressedButton:
             if(localButtonState == HIGH)
             {
-                button->counterMs--;
+                button->_private.counterMs--;
 
-                if(button->counterMs == 0)
+                if(button->_private.counterMs == 0)
                 {
                     button->state = pressedButton;
-                    button->counterMs = button->delayMs;
+                    button->_private.counterMs = button->delayMs;
                 }
             }
             else
             {
-                button->counterMs = button->delayMs;
+                button->_private.counterMs = button->delayMs;
             }
 
             break;
         case pressedButton:
             if(localButtonState == LOW)
             {
-                button->counterMs--;
+                button->_private.counterMs--;
 
-                if(button->counterMs == 0)
+                if(button->_private.counterMs == 0)
                 {
                     button->state = unpressedButton;
-                    button->counterMs = button->delayMs;
+                    button->_private.counterMs = button->delayMs;
                 }
             }
             else
             {
-                button->counterMs = button->delayMs;
+                button->_private.counterMs = button->delayMs;
             }
             break;
         default:
             button->state = unpressedButton;
-            button->counterMs = button->delayMs;
+            button->_private.counterMs = button->delayMs;
             break;
     }
 }
@@ -101,8 +101,8 @@ void SR_Button_Init(
 {    
     button->digitalPinNumber = digitalPinNumber;
     button->delayMs = delayMs;
-    button->counterMs = delayMs;
+    button->_private.counterMs = delayMs;
     button->state = unpressedButton;
 
-    pinMode(button->digitalPinNumber, OUTPUT);
+    pinMode(button->digitalPinNumber, INPUT);
 }

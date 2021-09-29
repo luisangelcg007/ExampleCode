@@ -13,8 +13,8 @@
 /*                                                                     */
 /***********************************************************************/
 
-#ifndef ALARMWITHCOUNTERBREATHPERIOD_H
-#define ALARMWITHCOUNTERBREATHPERIOD_H
+#ifndef BUTTONPROCESS_H
+#define BUTTONPROCESS_H
 
 #include "Arduino.h"
 #include "GlobalDefine.h"
@@ -29,8 +29,11 @@ typedef struct
 {
     U8 digitalPinNumber;
     U8 delayMs;
-    U8 counterMs;
     buttonStateEnumeration state;
+    struct
+    {
+        U8 counterMs;
+    } _private;
 } Button_t;
 
 extern buttonStateEnumeration SR_GetButtonState( Button_t* button );
