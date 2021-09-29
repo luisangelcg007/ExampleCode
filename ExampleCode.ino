@@ -13,7 +13,10 @@
 /*                                                                     */
 /***********************************************************************/
 
+#include "I_GetAndSetInterface.h"
+#include "LED_Process.h"
 #include "ButtonProcess.h"
+
 
 unsigned long previousMillis = 0;
 const long maintTickMs = 10;
@@ -29,10 +32,13 @@ Button_t greenButton;
 U8 greenDigitalPinNumber = 4;
 U8 greenDelayMs = (U8)100/maintTickMs;
 
-void setup() {
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
+LED_t blueLED;
+U8 blueLEDdigitalPinNumber = 3;
 
+LED_t greenLED;
+U8 greenLEDdigitalPinNumber = 2;
+
+void setup() {
   SR_Button_Init(
     &blueButton,
     blueDigitalPinNumber,
@@ -42,6 +48,14 @@ void setup() {
     &greenButton,
     greenDigitalPinNumber,
     greenDelayMs);
+
+  SR_Led_Init(
+    &blueLED,
+    blueLEDdigitalPinNumber);
+
+  SR_Led_Init(
+    &greenLED,
+    greenLEDdigitalPinNumber);
 }
 
 void loop() {
@@ -60,15 +74,15 @@ void loop() {
     buttonStateBlue = SR_GetButtonState( &blueButton );
 
     if ( buttonStateGreen == unpressedButton) {
-      digitalWrite(2, LOW);
+      greenLED.interface.api->SetState(&greenLED.interface, off);
     } else {
-      digitalWrite(2, HIGH);
+      greenLED.interface.api->SetState(&greenLED.interface, on);
     }
 
     if (buttonStateBlue == unpressedButton) {
-      digitalWrite(3, LOW);
+      blueLED.interface.api->SetState(&blueLED.interface, off);
     } else {
-      digitalWrite(3, HIGH);
+      blueLED.interface.api->SetState(&blueLED.interface, on);
     }    
   }
 }
